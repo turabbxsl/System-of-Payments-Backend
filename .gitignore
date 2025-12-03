@@ -1,0 +1,14 @@
+
+[Dd]ebug/
+[Rr]elease/
+bin/
+obj/
+*.user
+*.suo
+.vs/
+
+appsettings.json
+appsettings.Development.json
+appsettings.Staging.json
+appsettings.Production.json
+appsettings.Local.json
