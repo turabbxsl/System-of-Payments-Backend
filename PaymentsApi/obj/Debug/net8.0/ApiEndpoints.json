@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "PaymentsApi.Controllers.PaymentsController",
+    "Method": "CreatePayment",
+    "RelativePath": "payments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PaymentsApi.Models.PaymentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

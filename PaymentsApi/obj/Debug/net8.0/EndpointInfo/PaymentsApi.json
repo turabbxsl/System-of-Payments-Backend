@@ -1,0 +1,86 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "PaymentsApi",
+    "version": "1.0"
+  },
+  "paths": {
+    "/payments": {
+      "post": {
+        "tags": [
+          "Payments"
+        ],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "description": "Unique idempotency key (GUID recommended)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "c849d0bb-9fa1-410a-9b19-af531ffb5f58",
+              "example": "cb8cb30e-f2a5-4ffc-8c97-d5f3c00d0cd6"
+            }
+          },
+          {
+            "name": "X-User-Id",
+            "in": "header",
+            "description": "Unique UserId (GUID recommended)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "11111111-1111-1111-1111-111111111111",
+              "example": "11111111-1111-1111-1111-111111111111"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PaymentRequest": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "providerId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
