@@ -59,7 +59,7 @@ namespace Consumer.Services
                 var retryCount = GetRetryCount(ea.BasicProperties);
                 var result = await ProcessMessageAsync(ea);
 
-                if (!result.IsSuccess)
+                if (result.IsSuccess)
                 {
                     await channel.BasicAckAsync(ea.DeliveryTag, multiple: false);
                 }
@@ -91,6 +91,8 @@ namespace Consumer.Services
                     _logger.LogError("Empty payment ID received");
                     return Result.Failure<bool>(Error.EmptyPaymentId);
                 }
+
+                // create your business logic here
 
                 _logger.LogInformation("Message processed successfully. TransactionId: {TransactionId}", model.TransactionId);
                 return Result.Success(true);
