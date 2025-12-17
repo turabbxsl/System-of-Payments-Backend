@@ -1,4 +1,4 @@
-# 🏦 Payment System Backend (Transactional API)
+# Payment System Backend (Transactional API)
 
 This repository contains the core API for a secure and reliable payment processing system. The service is designed to handle payment requests and ensure transactional integrity by preventing duplicate processing.
 
