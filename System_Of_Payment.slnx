@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Worker/">
+    <Project Path="Worker/Payments.Consumer/Consumer.csproj" />
+    <Project Path="Worker/Payments.Publisher/PaymentsPublisher.csproj" />
+  </Folder>
+  <Project Path="PaymentsApi/PaymentsApi.csproj" />
+  <Project Path="Shared/Payments.Common/Payments.Common.csproj" Id="1947d752-4d01-43fa-936d-3045e49f9f5e" />
+</Solution>

@@ -1,5 +1,4 @@
-﻿using NpgsqlTypes;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PaymentsApi.Models;
 
@@ -17,4 +16,5 @@ public partial class Outboxmessage
     public string Type { get; set; } = null!;
 
     public DateTime Createdat { get; set; }
+    public DateTime? Updatedat { get; set; }
 }

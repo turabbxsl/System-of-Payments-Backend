@@ -18,8 +18,8 @@
             "required": true,
             "schema": {
               "type": "string",
-              "default": "c849d0bb-9fa1-410a-9b19-af531ffb5f58",
-              "example": "cb8cb30e-f2a5-4ffc-8c97-d5f3c00d0cd6"
+              "default": "eef9965a-ec4f-4e91-8d54-3a4295bc45b5",
+              "example": "58fbc035-afc6-451e-acca-fc9ad59b2110"
             }
           },
           {

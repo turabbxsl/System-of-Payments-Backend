@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PaymentsApi.Models;
-using System.Security.Cryptography;
-using System.Text;
 using System.Text.Json;
 
 namespace PaymentsApi.Services
@@ -38,7 +36,7 @@ namespace PaymentsApi.Services
                     Amount = request.Amount,
                     Currency = request.Currency,
                     Providerid = request.ProviderId,
-                    Status = TransactionStatus.Pending,
+                    Status = TransactionStatus.New,
                     Createdat = DateTime.UtcNow
                 };
 
@@ -48,13 +46,12 @@ namespace PaymentsApi.Services
                 {
                     messageId = Guid.NewGuid(),
                     transactionId = payment.Id,
-                    type = "PaymentCreated",
                     timestamp = DateTime.UtcNow,
                     payload = new
                     {
                         amount = payment.Amount,
                         currency = payment.Currency,
-                        userId = payment.Userid,
+                        userId = userId,
                         providerId = payment.Providerid,
                     }
                 };
@@ -65,7 +62,7 @@ namespace PaymentsApi.Services
                     Transactionid = payment.Id,
                     Payload = JsonSerializer.Serialize(evt),
                     Type = "PaymentCreated",
-                    Status = TransactionStatus.Pending,
+                    Status = TransactionStatus.New,
                     Createdat = DateTime.UtcNow
                 };
 

@@ -23,7 +23,7 @@ public partial class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.HasPostgresEnum("transactionstatus", new[] { "Pending", "Processing", "Success", "Failed" });
+        modelBuilder.HasPostgresEnum("transactionstatus", new[] { "Pending", "Processing", "Success", "Failed", "New" });
 
         modelBuilder.Entity<Eventlog>(entity =>
         {
@@ -88,6 +88,10 @@ public partial class AppDbContext : DbContext
                 .HasDefaultValueSql("now()")
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("createdat");
+            entity.Property(e => e.Updatedat)
+                .HasDefaultValueSql("now()")
+                .HasColumnType("timestamp without time zone")
+                .HasColumnName("updatedat");
             entity.Property(e => e.Payload)
                 .HasColumnType("jsonb")
                 .HasColumnName("payload");

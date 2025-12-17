@@ -106,3 +106,4 @@ C:\Users\t.bakhishli\source\repos\PaymentsApi\PaymentsApi\obj\Debug\net8.0\refin
 C:\Users\t.bakhishli\source\repos\PaymentsApi\PaymentsApi\obj\Debug\net8.0\PaymentsApi.pdb
 C:\Users\t.bakhishli\source\repos\PaymentsApi\PaymentsApi\obj\Debug\net8.0\PaymentsApi.genruntimeconfig.cache
 C:\Users\t.bakhishli\source\repos\PaymentsApi\PaymentsApi\obj\Debug\net8.0\ref\PaymentsApi.dll
+C:\Users\t.bakhishli\source\repos\PaymentsApi\PaymentsApi\obj\Debug\net8.0\PaymentsApi.sourcelink.json
